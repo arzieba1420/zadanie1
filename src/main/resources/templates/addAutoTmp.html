@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form th:action="@{/saveAuto}" th:object="${nowy}" method="post">
+        <label for="marka">marka</label>
+        <input id="marka" type="text" th:field="*{marka}">
+        <label for="model">model</label>
+        <input id="model" type="text" th:field="*{model}">
+        <label for="przebieg">przebieg</label>
+        <input id="przebieg" type="text" th:field="*{przebieg}">
+        <label for="rocznik">rocznik</label>
+        <input id="rocznik" type="text" th:field="*{rocznik}">
+        <label for="cena">cena</label>
+        <input id="cena" type="text" th:field="*{cena}">
+
+        <input  type="submit" value="Dodaj">
+
+
+    </form>
+
+
+</body>
+</html>

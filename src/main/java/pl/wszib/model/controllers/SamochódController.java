@@ -1,5 +1,6 @@
 package pl.wszib.model.controllers;
 
+import org.springframework.web.bind.annotation.PostMapping;
 import pl.wszib.model.Samochód;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,10 +18,11 @@ public class SamochódController {
 
         return autos();
     }
+    List<Samochód> nowaLista = autos();
 
     @GetMapping("carlist")
     public String autoList(Model model ){
-       List<Samochód> lista = autos();
+       List<Samochód> lista = nowaLista;
        model.addAttribute("nameList",lista);
         return "autoTemplate";
 
@@ -45,8 +47,20 @@ public class SamochódController {
     public String oneAuto(Model model, @PathVariable Integer index){
 
 
-        model.addAttribute("wybrane_auto",autos().get(index));
+        model.addAttribute("wybrane_auto",nowaLista.get(index));
         model.addAttribute("index",index);
         return "oneAutoTemplate";
+    }
+
+    @GetMapping("autoForm")
+    public String autoForm(Model model){
+        model.addAttribute("nowy",new Samochód());
+        return "addAutoTmp";
+    }
+
+    @PostMapping("saveAuto")
+    public String addAuto(Samochód samochód, Model model){
+        nowaLista.add(samochód);
+        return "successTmp";
     }
 }
