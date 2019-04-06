@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <th>Index</th>
+            <th>Marka</th>
+            <th>Model</th>
+            <th>Link</th>
+        </thead>
+        <tbody>
+         <tr th:each="auto, iterStat: ${nameList} ">
+                <td th:text="${iterStat.index}"></td>
+                <td th:text="${auto.marka}"></td>
+                <td th:text="${auto.model}"></td>
+             <td ><a th:href="@{/car/single/} + ${iterStat.index}">Link</a></td>
+
+            </tr>
+
+        </tbody>
+
+
+
+
+    </table>
+
+
+
+
+
+
+</body>
+</html>

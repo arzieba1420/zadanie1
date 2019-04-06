@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table>
+    <thead>
+    <th>Index</th>
+    <th>Marka</th>
+    <th>Model</th>
+    <th>Rocznik</th>
+    <th>Przebieg</th>
+    <th>Cena</th>
+    </thead>
+    <tbody>
+    <tr >
+        <td th:text="${index}"></td>
+        <td th:text="${wybrane_auto.marka}"></td>
+        <td th:text="${wybrane_auto.model}"></td>
+        <td th:text="${wybrane_auto.rocznik}"></td>
+        <td th:text="${wybrane_auto.przebieg}"></td>
+        <td th:text="${wybrane_auto.cena}"></td>
+
+
+    </tr>
+
+    </tbody>
+
+
+
+</table>
+
+
+
+
+</body>
+</html>
